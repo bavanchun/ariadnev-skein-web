@@ -2,23 +2,170 @@
 import '../styles/global.css';
 const release = 'https://github.com/bavanchun/ariadnev-skein/releases/latest';
 const repo = 'https://github.com/bavanchun/ariadnev-skein';
-const features = ['Hide icons behind a click', 'Always-hide sensitive apps', 'Add a second menu bar', 'Use global hotkeys', 'Search every icon'];
+const features = [
+  'Hide icons behind a click',
+  'Always-hide sensitive apps',
+  'Add a second menu bar',
+  'Use global hotkeys',
+  'Search every icon',
+];
 const faqs = [
-	['Does Skein launch at login?', 'Yes. Launch at Login is available in Advanced settings.'],
-	['What permissions does it need?', 'Accessibility manages menu bar items. Screen Recording unlocks Skein Bar and appearance editing.'],
-	['How do updates work?', 'Skein checks its update feed for new releases.'],
-	['Where is the source?', 'Skein is free and open source under GPL-3.0.'],
+  [
+    'Does Skein launch at login?',
+    'Yes. Launch at Login is available in Advanced settings.',
+  ],
+  [
+    'What permissions does it need?',
+    'Accessibility manages menu bar items. Screen Recording unlocks Skein Bar and appearance editing.',
+  ],
+  ['How do updates work?', 'Skein checks its update feed for new releases.'],
+  ['Where is the source?', 'Skein is free and open source under GPL-3.0.'],
 ];
 ---
-<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta name="description" content="Skein is a macOS menu bar manager." /><title>Skein — make room in your menu bar</title></head>
-<body><a class="skip-link" href="#content">Skip to content</a><header><a class="wordmark" href="/">Skein<span>.</span></a><a href={release}>Download</a></header><main id="content">
-<section class="hero scene"><div><p class="eyebrow">A menu bar manager for macOS</p><h1>Make room<br />for what matters.</h1><p class="lede">Skein gathers the noise at the edge of your screen, so your menu bar can breathe again.</p><p class="actions"><a class="button primary" href={release}>Download for macOS ↗</a><a class="button" href={repo}>View on GitHub</a></p></div><div class="placeholder icon-placeholder">Icon artwork<br />in progress</div><i class="thread hero-thread" aria-hidden="true"></i></section>
-<section class="scene section problem"><div><p class="eyebrow">The problem</p><h2>A small space<br />fills up fast.</h2><p>One utility becomes five. Then the useful things disappear behind the things that merely need attention.</p></div><div class="menu-bar overflow" aria-label="Illustration of an overcrowded menu bar">● ◐ ◒ ◉ ◈ ◌ ◍ ◑ ◓ ✦ ◈ ◉</div></section>
-<section class="scene section solution"><div><p class="eyebrow">The skein</p><h2>Draw a line<br />through clutter.</h2><p>Skein gives every item a place: visible, hidden, or always tucked away.</p></div><div class="menu-bar" aria-label="Illustration of organised menu bar items">● ◐ ◒　│　◉ ◈　•••</div></section>
-<section class="scene section"><p class="eyebrow">Five ways to clear the way</p><h2>Less searching.<br />More seeing.</h2><div class="feature-grid">{features.map((feature, index) => <article><b>0{index + 1}</b><h3>{feature}</h3><p>Made for the things you reach for every day.</p></article>)}</div></section>
-<section class="scene section appearance"><div><p class="eyebrow">Appearance</p><h2>Your bar,<br />your atmosphere.</h2><p>Fine-tune tint, shadow, split, and colour.</p></div><div class="gallery">{Array.from({ length: 3 }, () => <div class="placeholder">Appearance capture<br />pending</div>)}</div></section>
-<section class="scene section requirements"><p class="eyebrow">Built for the bar you already have</p><h2>Mac, made simpler.</h2><ul><li>macOS 14 or later</li><li>Apple Silicon and Intel</li><li>Free and open source</li><li>GPL-3.0</li></ul></section>
-<section class="scene section updates"><p class="eyebrow">What’s changing</p><h2>Built in the open.</h2><p>Follow releases, fixes, and what comes next on GitHub.</p><a href={`${repo}/releases`}>Read the latest release notes →</a></section>
-<section class="scene section"><p class="eyebrow">FAQ</p><h2>A few good questions.</h2><div class="faq">{faqs.map(([question, answer]) => <details><summary>{question}</summary><p>{answer}</p></details>)}</div></section>
-<section class="scene download"><i class="thread footer-thread" aria-hidden="true"></i><p class="eyebrow">Take back the edge of your screen</p><h2>A calmer menu bar<br />starts here.</h2><a class="button primary" href={release}>Download for macOS ↗</a></section>
-</main><footer><p>© {new Date().getFullYear()} ariadnev</p><nav><a href={repo}>GitHub</a><a href={`${repo}/blob/main/LICENSE`}>License &amp; Ice attribution</a><a href="https://ariadnev.com">ariadnev</a></nav></footer></body></html>
+
+<html lang="en">
+  <head
+    ><meta charset="utf-8" /><meta
+      name="viewport"
+      content="width=device-width"
+    /><meta
+      name="description"
+      content="Skein is a macOS menu bar manager."
+    /><title>Skein — make room in your menu bar</title></head
+  >
+  <body
+    ><a class="skip-link" href="#content">Skip to content</a><header>
+      <a class="wordmark" href="/">Skein<span>.</span></a><a href={release}
+        >Download</a
+      >
+    </header><main id="content">
+      <section class="hero scene">
+        <div>
+          <p class="eyebrow">A menu bar manager for macOS</p><h1>
+            Make room<br />for what matters.
+          </h1><p class="lede">
+            Skein gathers the noise at the edge of your screen, so your menu bar
+            can breathe again.
+          </p><p class="actions">
+            <a class="button primary" href={release}>Download for macOS ↗</a><a
+              class="button"
+              href={repo}>View on GitHub</a
+            >
+          </p>
+        </div><div class="placeholder icon-placeholder">
+          Icon artwork<br />in progress
+        </div><i class="thread hero-thread" aria-hidden="true"></i>
+      </section>
+      <section class="scene section problem">
+        <div>
+          <p class="eyebrow">The problem</p><h2>
+            A small space<br />fills up fast.
+          </h2><p>
+            One utility becomes five. Then the useful things disappear behind
+            the things that merely need attention.
+          </p>
+        </div><div
+          class="menu-bar overflow"
+          aria-label="Illustration of an overcrowded menu bar"
+        >
+          ● ◐ ◒ ◉ ◈ ◌ ◍ ◑ ◓ ✦ ◈ ◉
+        </div>
+      </section>
+      <section class="scene section solution">
+        <div>
+          <p class="eyebrow">The skein</p><h2>
+            Draw a line<br />through clutter.
+          </h2><p>
+            Skein gives every item a place: visible, hidden, or always tucked
+            away.
+          </p>
+        </div><div
+          class="menu-bar"
+          aria-label="Illustration of organised menu bar items"
+        >
+          ● ◐ ◒　│　◉ ◈　•••
+        </div>
+      </section>
+      <section class="scene section">
+        <p class="eyebrow">Five ways to clear the way</p><h2>
+          Less searching.<br />More seeing.
+        </h2><div class="feature-grid">
+          {
+            features.map((feature, index) => (
+              <article>
+                <>
+                  <b>0{index + 1}</b>
+                  <h3>{feature}</h3>
+                  <p>Made for the things you reach for every day.</p>
+                </>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+      <section class="scene section appearance">
+        <div>
+          <p class="eyebrow">Appearance</p><h2>
+            Your bar,<br />your atmosphere.
+          </h2><p>Fine-tune tint, shadow, split, and colour.</p>
+        </div><div class="gallery">
+          {
+            Array.from({ length: 3 }, () => (
+              <div class="placeholder">
+                Appearance capture
+                <br />
+                pending
+              </div>
+            ))
+          }
+        </div>
+      </section>
+      <section class="scene section requirements">
+        <p class="eyebrow">Built for the bar you already have</p><h2>
+          Mac, made simpler.
+        </h2><ul>
+          <li>macOS 14 or later</li><li>Apple Silicon and Intel</li><li>
+            Free and open source
+          </li><li>GPL-3.0</li>
+        </ul>
+      </section>
+      <section class="scene section updates">
+        <p class="eyebrow">What’s changing</p><h2>Built in the open.</h2><p>
+          Follow releases, fixes, and what comes next on GitHub.
+        </p><a href={`${repo}/releases`}>Read the latest release notes →</a>
+      </section>
+      <section class="scene section">
+        <p class="eyebrow">FAQ</p><h2>A few good questions.</h2><div
+          class="faq"
+        >
+          {
+            faqs.map(([question, answer]) => (
+              <details>
+                <>
+                  <summary>{question}</summary>
+                  <p>{answer}</p>
+                </>
+              </details>
+            ))
+          }
+        </div>
+      </section>
+      <section class="scene download">
+        <i class="thread footer-thread" aria-hidden="true"></i><p
+          class="eyebrow"
+        >
+          Take back the edge of your screen
+        </p><h2>A calmer menu bar<br />starts here.</h2><a
+          class="button primary"
+          href={release}>Download for macOS ↗</a
+        >
+      </section>
+    </main><footer>
+      <p>© {new Date().getFullYear()} ariadnev</p><nav>
+        <a href={repo}>GitHub</a><a href={`${repo}/blob/main/LICENSE`}
+          >License &amp; Ice attribution</a
+        ><a href="https://ariadnev.com">ariadnev</a>
+      </nav>
+    </footer></body
+  >
+</html>
