@@ -148,6 +148,17 @@ h3 {
   aspect-ratio: 1;
   transform: rotate(3deg);
 }
+
+.first-launch-note {
+  max-width: 34rem;
+  margin: 1rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.download .first-launch-note {
+  margin-inline: auto;
+}
 .thread {
   position: absolute;
   border: clamp(2px, 0.45vw, 6px) solid var(--thread);
