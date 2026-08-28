@@ -326,3 +326,28 @@ details p {
     transition-duration: 0.01ms !important;
   }
 }
+
+.faq details ol {
+  margin: 0.5rem 0 0.75rem 1.25rem;
+  padding: 0;
+  line-height: 1.55;
+}
+.faq details ol li {
+  margin-bottom: 0.35rem;
+}
+.faq details pre {
+  margin: 0.5rem 0 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--paper, #f4efe6);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.faq details pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.first-launch-note strong {
+  font-weight: 600;
+}

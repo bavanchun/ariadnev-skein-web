@@ -56,9 +56,10 @@ const faqs = [
             >
           </p>
           <p class="first-launch-note">
-            First launch: Skein isn’t notarized yet. Open System Settings →
-            Privacy &amp; Security and choose Open Anyway.
-            <a href={releaseNotes}>Release notes</a>
+            <strong>Heads up on first launch:</strong> macOS will show a
+            <em>“Skein Not Opened”</em> warning because Skein isn’t notarized with
+            Apple yet. It’s not malware — Skein is open source under GPL-3.0.
+            <a href="#first-launch">See the two-step unblock →</a>
           </p>
         </div><img
           class="icon-placeholder"
@@ -146,10 +147,66 @@ const faqs = [
           Follow releases, fixes, and what comes next on GitHub.
         </p><a href={`${repo}/releases`}>Read the latest release notes →</a>
       </section>
-      <section class="scene section">
+      <section id="faq" class="scene section">
         <p class="eyebrow">FAQ</p><h2>A few good questions.</h2><div
           class="faq"
         >
+          <details id="first-launch" open>
+            <summary>
+              Why does macOS say “Skein Not Opened”? Is Skein safe?
+            </summary>
+            <p>
+              Yes, Skein is safe. It’s open source (GPL-3.0) — every line of
+              code is on <a href={repo}>GitHub</a> for you to read or audit. The warning
+              appears because Skein isn’t notarized with Apple. Notarization requires
+              a paid Apple Developer account ($99/year), and Skein is a free, independently-maintained
+              project that hasn’t opted in yet.
+            </p>
+            <p>
+              Apple’s notarization is a malware-scan step, not a security
+              guarantee — plenty of legitimate open-source Mac apps skip it for
+              the same reason. It’s the same trade-off as running anything from
+              Homebrew.
+            </p>
+            <p><strong>Two ways to open Skein the first time:</strong></p>
+            <p>
+              <strong
+                >Option A — no Terminal (recommended for most people):</strong
+              >
+            </p>
+            <ol>
+              <li>
+                When the “Skein Not Opened” dialog appears, click
+                <strong>Done</strong> (don’t click Move to Trash).
+              </li>
+              <li>
+                Open <strong>System Settings → Privacy &amp; Security</strong>.
+              </li>
+              <li>
+                Scroll to the Security section — you’ll see a line
+                <em>“Skein was blocked to protect your Mac.”</em> Click
+                <strong>Open Anyway</strong>.
+              </li>
+              <li>
+                Enter your Mac password to confirm. Skein opens, and from now on
+                you can launch it normally like any other app.
+              </li>
+            </ol>
+            <p><strong>Option B — one Terminal command:</strong></p>
+            <pre><code>xattr -cr /Applications/Skein.app</code></pre>
+            <p>
+              This removes the download-quarantine flag macOS attaches to
+              browser downloads. After running it, open Skein from
+              Launchpad/Finder as usual.
+            </p>
+            <p>
+              You only need to do this once. Every future launch — including
+              auto-updates through Sparkle — will open normally.
+            </p>
+            <p>
+              <a href={releaseNotes}>Full release notes for v1.2.1 →</a>
+            </p>
+          </details>
           {
             faqs.map(([question, answer]) => (
               <details>
@@ -171,9 +228,10 @@ const faqs = [
           class="button primary"
           href={release}>Download for macOS ↗</a
         ><p class="first-launch-note">
-          First launch: Skein isn’t notarized yet. Open System Settings →
-          Privacy &amp; Security and choose Open Anyway.
-          <a href={releaseNotes}>Release notes</a>
+          <strong>Heads up on first launch:</strong> macOS will show a
+          <em>“Skein Not Opened”</em> warning because Skein isn’t notarized with Apple
+          yet. It’s not malware — Skein is open source under GPL-3.0.
+          <a href="#first-launch">See the two-step unblock →</a>
         </p>
       </section>
     </main><footer>
