@@ -1,17 +1,245 @@
 ---
 import '../styles/global.css';
+const release =
+  'https://github.com/bavanchun/ariadnev-skein/releases/download/v1.2.1/Skein-1.2.1.zip';
+const releaseNotes =
+  'https://github.com/bavanchun/ariadnev-skein/releases/tag/v1.2.1';
+const repo = 'https://github.com/bavanchun/ariadnev-skein';
+const features = [
+  'Hide icons behind a click',
+  'Always-hide sensitive apps',
+  'Add a second menu bar',
+  'Use global hotkeys',
+  'Search every icon',
+];
+const faqs = [
+  [
+    'Does Skein launch at login?',
+    'Yes. Launch at Login is available in Advanced settings.',
+  ],
+  [
+    'What permissions does it need?',
+    'Accessibility manages menu bar items. Screen Recording unlocks Skein Bar and appearance editing.',
+  ],
+  ['How do updates work?', 'Skein checks its update feed for new releases.'],
+  ['Where is the source?', 'Skein is free and open source under GPL-3.0.'],
+];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Skein</title>
-	</head>
-	<body>
-		<main>
-			<h1>Skein</h1>
-		</main>
-	</body>
+  <head
+    ><meta charset="utf-8" /><meta
+      name="viewport"
+      content="width=device-width"
+    /><meta
+      name="description"
+      content="Skein is a macOS menu bar manager."
+    /><title>Skein — make room in your menu bar</title></head
+  >
+  <body
+    ><a class="skip-link" href="#content">Skip to content</a><header>
+      <a class="wordmark" href="/">Skein<span>.</span></a><a href={release}
+        >Download</a
+      >
+    </header><main id="content">
+      <section class="hero scene">
+        <div>
+          <p class="eyebrow">A menu bar manager for macOS</p><h1>
+            Make room<br />for what matters.
+          </h1><p class="lede">
+            Skein gathers the noise at the edge of your screen, so your menu bar
+            can breathe again.
+          </p><p class="actions">
+            <a class="button primary" href={release}>Download for macOS ↗</a><a
+              class="button"
+              href={repo}>View on GitHub</a
+            >
+          </p>
+          <p class="first-launch-note">
+            <strong>Heads up on first launch:</strong> macOS will show a
+            <em>“Skein Not Opened”</em> warning because Skein isn’t notarized with
+            Apple yet. It’s not malware — Skein is open source under GPL-3.0.
+            <a href="#first-launch">See the two-step unblock →</a>
+          </p>
+        </div><img
+          class="icon-placeholder"
+          src="/images/skein-icon-v1.2.1.png"
+          width="256"
+          height="256"
+          alt="Skein rope infinity loop icon"
+        /><i class="thread hero-thread" aria-hidden="true"></i>
+      </section>
+      <section class="scene section problem">
+        <div>
+          <p class="eyebrow">The problem</p><h2>
+            A small space<br />fills up fast.
+          </h2><p>
+            One utility becomes five. Then the useful things disappear behind
+            the things that merely need attention.
+          </p>
+        </div><div
+          class="menu-bar overflow"
+          aria-label="Illustration of an overcrowded menu bar"
+        >
+          ● ◐ ◒ ◉ ◈ ◌ ◍ ◑ ◓ ✦ ◈ ◉
+        </div>
+      </section>
+      <section class="scene section solution">
+        <div>
+          <p class="eyebrow">The skein</p><h2>
+            Draw a line<br />through clutter.
+          </h2><p>
+            Skein gives every item a place: visible, hidden, or always tucked
+            away.
+          </p>
+        </div><div
+          class="menu-bar"
+          aria-label="Illustration of organised menu bar items"
+        >
+          ● ◐ ◒　│　◉ ◈　•••
+        </div>
+      </section>
+      <section class="scene section">
+        <p class="eyebrow">Five ways to clear the way</p><h2>
+          Less searching.<br />More seeing.
+        </h2><div class="feature-grid">
+          {
+            features.map((feature, index) => (
+              <article>
+                <>
+                  <b>0{index + 1}</b>
+                  <h3>{feature}</h3>
+                  <p>Made for the things you reach for every day.</p>
+                </>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+      <section class="scene section appearance">
+        <div>
+          <p class="eyebrow">Appearance</p><h2>
+            Your bar,<br />your atmosphere.
+          </h2><p>Fine-tune tint, shadow, split, and colour.</p>
+        </div><div class="gallery">
+          {
+            Array.from({ length: 3 }, () => (
+              <div class="placeholder">
+                Appearance capture
+                <br />
+                pending
+              </div>
+            ))
+          }
+        </div>
+      </section>
+      <section class="scene section requirements">
+        <p class="eyebrow">Built for the bar you already have</p><h2>
+          Mac, made simpler.
+        </h2><ul>
+          <li>macOS 14 or later</li><li>Apple Silicon and Intel</li><li>
+            Free and open source
+          </li><li>GPL-3.0</li>
+        </ul>
+      </section>
+      <section class="scene section updates">
+        <p class="eyebrow">What’s changing</p><h2>Built in the open.</h2><p>
+          Follow releases, fixes, and what comes next on GitHub.
+        </p><a href={`${repo}/releases`}>Read the latest release notes →</a>
+      </section>
+      <section id="faq" class="scene section">
+        <p class="eyebrow">FAQ</p><h2>A few good questions.</h2><div
+          class="faq"
+        >
+          <details id="first-launch" open>
+            <summary>
+              Why does macOS say “Skein Not Opened”? Is Skein safe?
+            </summary>
+            <p>
+              Yes, Skein is safe. It’s open source (GPL-3.0) — every line of
+              code is on <a href={repo}>GitHub</a> for you to read or audit. The warning
+              appears because Skein isn’t notarized with Apple. Notarization requires
+              a paid Apple Developer account ($99/year), and Skein is a free, independently-maintained
+              project that hasn’t opted in yet.
+            </p>
+            <p>
+              Apple’s notarization is a malware-scan step, not a security
+              guarantee — plenty of legitimate open-source Mac apps skip it for
+              the same reason. It’s the same trade-off as running anything from
+              Homebrew.
+            </p>
+            <p><strong>Two ways to open Skein the first time:</strong></p>
+            <p>
+              <strong
+                >Option A — no Terminal (recommended for most people):</strong
+              >
+            </p>
+            <ol>
+              <li>
+                When the “Skein Not Opened” dialog appears, click
+                <strong>Done</strong> (don’t click Move to Trash).
+              </li>
+              <li>
+                Open <strong>System Settings → Privacy &amp; Security</strong>.
+              </li>
+              <li>
+                Scroll to the Security section — you’ll see a line
+                <em>“Skein was blocked to protect your Mac.”</em> Click
+                <strong>Open Anyway</strong>.
+              </li>
+              <li>
+                Enter your Mac password to confirm. Skein opens, and from now on
+                you can launch it normally like any other app.
+              </li>
+            </ol>
+            <p><strong>Option B — one Terminal command:</strong></p>
+            <pre><code>xattr -cr /Applications/Skein.app</code></pre>
+            <p>
+              This removes the download-quarantine flag macOS attaches to
+              browser downloads. After running it, open Skein from
+              Launchpad/Finder as usual.
+            </p>
+            <p>
+              You only need to do this once. Every future launch — including
+              auto-updates through Sparkle — will open normally.
+            </p>
+            <p>
+              <a href={releaseNotes}>Full release notes for v1.2.1 →</a>
+            </p>
+          </details>
+          {
+            faqs.map(([question, answer]) => (
+              <details>
+                <>
+                  <summary>{question}</summary>
+                  <p>{answer}</p>
+                </>
+              </details>
+            ))
+          }
+        </div>
+      </section>
+      <section class="scene download">
+        <i class="thread footer-thread" aria-hidden="true"></i><p
+          class="eyebrow"
+        >
+          Take back the edge of your screen
+        </p><h2>A calmer menu bar<br />starts here.</h2><a
+          class="button primary"
+          href={release}>Download for macOS ↗</a
+        ><p class="first-launch-note">
+          <strong>Heads up on first launch:</strong> macOS will show a
+          <em>“Skein Not Opened”</em> warning because Skein isn’t notarized with Apple
+          yet. It’s not malware — Skein is open source under GPL-3.0.
+          <a href="#first-launch">See the two-step unblock →</a>
+        </p>
+      </section>
+    </main><footer>
+      <p>© {new Date().getFullYear()} ariadnev</p><nav>
+        <a href={repo}>GitHub</a><a href={`${repo}/blob/main/LICENSE`}
+          >License &amp; Ice attribution</a
+        ><a href="https://ariadnev.com">ariadnev</a>
+      </nav>
+    </footer><script src="../scripts/scroll.ts"></script></body
+  >
 </html>
